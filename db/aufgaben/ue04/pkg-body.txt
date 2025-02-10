@@ -4,8 +4,8 @@ create or replace package body cooling_service as
     p_sample_id sample.sampleid%type
   ) as
   begin
-    dbms_output_put_line('test');
-    dbms_output_put_line(p_sample_id);
+    dbms_output.put_line('test');
+    dbms_output.put_line(p_sample_id);
   end test;
 
   -----------------------------------------------------------------------------
