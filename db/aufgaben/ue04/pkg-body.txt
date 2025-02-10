@@ -1,19 +1,23 @@
 create or replace package body cooling_service as
 
+  procedure test(
+    p_sample_id sample.sampleid%type
+  ) as
+  begin
+    dbms_output_put_line('test');
+    dbms_output_put_line(p_sample_id);
+  end test;
 
-  -----------------------------------------------------------------------------  
+  -----------------------------------------------------------------------------
   -- transfer_sample
-  -----------------------------------------------------------------------------  
+  -----------------------------------------------------------------------------
   procedure transfer_sample(
-    p_sample_id sample.sampleid%type, 
+    p_sample_id sample.sampleid%type,
     p_diameter_in_cm tray.diameterincm%type
   ) as
   begin
-    null;
-  end transfer_sample; 
-
-
-  
+    test(p_sample_id);
+  end transfer_sample;
 
 end cooling_service;
 

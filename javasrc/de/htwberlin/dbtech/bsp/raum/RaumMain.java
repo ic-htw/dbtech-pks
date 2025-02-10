@@ -11,22 +11,22 @@ import de.htwberlin.dbtech.utils.DbCred;
 import de.htwberlin.dbtech.utils.JdbcUtils;
 
 public class RaumMain {
-  private static final Logger L = LoggerFactory.getLogger(RaumMain.class);
+    private static final Logger L = LoggerFactory.getLogger(RaumMain.class);
 
-  public static void main(String[] args) {
-    IRaumService rs = new RaumService();
+    public static void main(String[] args) {
+        IRaumService rs = new RaumService();
 
-    try (Connection connection = JdbcUtils.getConnectionViaDriverManager(DbCred.url, DbCred.user, DbCred.password)) {
-      rs.setConnection(connection);
-      Integer rid = 1;
-      int anzahl = rs.findAnzahlPlaetzeInRaum(rid);
-      System.out.println(anzahl);
-    } catch (SQLException e) {
-      L.error("Verbindungsaufbau gescheitert", e);
-    } catch (DataException e) {
-      L.error("DataException");
+        try (Connection connection = JdbcUtils.getConnectionViaDriverManager(DbCred.url, DbCred.user, DbCred.password)) {
+            rs.setConnection(connection);
+            int rid = 1;
+            int anzahl = rs.findAnzahlPlaetzeInRaum(rid);
+            System.out.println(anzahl);
+        } catch (SQLException e) {
+            L.error("Verbindungsaufbau gescheitert", e);
+        } catch (DataException e) {
+            L.error("DataException");
+        }
+
     }
-
-  }
 
 }

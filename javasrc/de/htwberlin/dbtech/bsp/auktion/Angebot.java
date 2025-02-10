@@ -7,75 +7,75 @@ import java.sql.Timestamp;
 import de.htwberlin.dbtech.exceptions.ServiceException;
 
 public class Angebot {
-  private Integer aid;
-  private String artikelBez;
-  private Timestamp auktionEndeZeitpunkt;
-  private BigDecimal auktionMinPreis;
+    private Integer aid;
+    private String artikelBez;
+    private Timestamp auktionEndeZeitpunkt;
+    private BigDecimal auktionMinPreis;
 
-  // aktuellerPreis wird aus den Geboten berechnet
-  // ist nicht Splate in der Tabelle Angebot
-  // wird auch nicht in insert und aupdate behandelt
-  private BigDecimal aktuellerPreis;
+    // aktuellerPreis wird aus den Geboten berechnet
+    // ist nicht Splate in der Tabelle Angebot
+    // wird auch nicht in insert und aupdate behandelt
+    private BigDecimal aktuellerPreis;
 
-  private Connection connection = null;
+    private Connection connection = null;
 
-  public void setConnection(Connection connection) {
-    this.connection = connection;
-  }
-
-  @SuppressWarnings("unused")
-private Connection useConnection() {
-    if (connection == null) {
-      throw new ServiceException("Service hat keine Connection");
+    public void setConnection(Connection connection) {
+        this.connection = connection;
     }
-    return connection;
-  }
 
-  public Integer getAid() {
-    return aid;
-  }
+    @SuppressWarnings("unused")
+    private Connection useConnection() {
+        if (connection == null) {
+            throw new ServiceException("Service hat keine Connection");
+        }
+        return connection;
+    }
 
-  public void setAid(Integer aid) {
-    this.aid = aid;
-  }
+    public Integer getAid() {
+        return aid;
+    }
 
-  public String getArtikelBez() {
-    return artikelBez;
-  }
+    public void setAid(Integer aid) {
+        this.aid = aid;
+    }
 
-  public void setArtikelBez(String artikelBez) {
-    this.artikelBez = artikelBez;
-  }
+    public String getArtikelBez() {
+        return artikelBez;
+    }
 
-  public Timestamp getAuktionEndeZeitpunkt() {
-    return auktionEndeZeitpunkt;
-  }
+    public void setArtikelBez(String artikelBez) {
+        this.artikelBez = artikelBez;
+    }
 
-  public void setAuktionEndeZeitpunkt(Timestamp auktionEndeZeitpunkt) {
-    this.auktionEndeZeitpunkt = auktionEndeZeitpunkt;
-  }
+    public Timestamp getAuktionEndeZeitpunkt() {
+        return auktionEndeZeitpunkt;
+    }
 
-  public BigDecimal getAuktionMinPreis() {
-    return auktionMinPreis;
-  }
+    public void setAuktionEndeZeitpunkt(Timestamp auktionEndeZeitpunkt) {
+        this.auktionEndeZeitpunkt = auktionEndeZeitpunkt;
+    }
 
-  public void setAuktionMinPreis(BigDecimal auktionMinPreis) {
-    this.auktionMinPreis = auktionMinPreis;
-  }
+    public BigDecimal getAuktionMinPreis() {
+        return auktionMinPreis;
+    }
 
-  public BigDecimal getAktuellerPreis() {
-    return aktuellerPreis;
-  }
+    public void setAuktionMinPreis(BigDecimal auktionMinPreis) {
+        this.auktionMinPreis = auktionMinPreis;
+    }
 
-  public void insert() {
-    // SQL-Code zum Speichern dieses Angebots in der Datenbank
-  }
+    public BigDecimal getAktuellerPreis() {
+        return aktuellerPreis;
+    }
 
-  public void update() {
-    // SQL-Code zum Aendern dieses Angebots in der Datenbank
-  }
+    public void insert() {
+        // SQL-Code zum Speichern dieses Angebots in der Datenbank
+    }
 
-  public void delete() {
-    // SQL-Code zum Loeschen dieses Angebots in der Datenbank
-  }
+    public void update() {
+        // SQL-Code zum Aendern dieses Angebots in der Datenbank
+    }
+
+    public void delete() {
+        // SQL-Code zum Loeschen dieses Angebots in der Datenbank
+    }
 }

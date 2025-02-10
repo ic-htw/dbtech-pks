@@ -7,66 +7,66 @@ import java.sql.Timestamp;
 import de.htwberlin.dbtech.exceptions.ServiceException;
 
 public class Gebot {
-  private Integer gid;
-  private Integer aid;
-  private Timestamp gebotsZeitpunkt;
-  private BigDecimal gebotsPreis;
-  
-  private Connection connection = null;
+    private Integer gid;
+    private Integer aid;
+    private Timestamp gebotsZeitpunkt;
+    private BigDecimal gebotsPreis;
 
-  public void setConnection(Connection connection) {
-    this.connection = connection;
-  }
+    private Connection connection = null;
 
-  @SuppressWarnings("unused")
-private Connection useConnection() {
-    if (connection == null) {
-      throw new ServiceException("Service hat keine Connection");
+    public void setConnection(Connection connection) {
+        this.connection = connection;
     }
-    return connection;
-  }
 
-  public Integer getGid() {
-    return gid;
-  }
+    @SuppressWarnings("unused")
+    private Connection useConnection() {
+        if (connection == null) {
+            throw new ServiceException("Service hat keine Connection");
+        }
+        return connection;
+    }
 
-  public void setGid(Integer gid) {
-    this.gid = gid;
-  }
+    public Integer getGid() {
+        return gid;
+    }
 
-  public Integer getAid() {
-    return aid;
-  }
+    public void setGid(Integer gid) {
+        this.gid = gid;
+    }
 
-  public void setAid(Integer aid) {
-    this.aid = aid;
-  }
+    public Integer getAid() {
+        return aid;
+    }
 
-  public Timestamp getGebotsZeitpunkt() {
-    return gebotsZeitpunkt;
-  }
+    public void setAid(Integer aid) {
+        this.aid = aid;
+    }
 
-  public void setGebotsZeitpunkt(Timestamp gebotsZeitpunkt) {
-    this.gebotsZeitpunkt = gebotsZeitpunkt;
-  }
+    public Timestamp getGebotsZeitpunkt() {
+        return gebotsZeitpunkt;
+    }
 
-  public BigDecimal getGebotsPreis() {
-    return gebotsPreis;
-  }
+    public void setGebotsZeitpunkt(Timestamp gebotsZeitpunkt) {
+        this.gebotsZeitpunkt = gebotsZeitpunkt;
+    }
 
-  public void setGebotsPreis(BigDecimal gebotsPreis) {
-    this.gebotsPreis = gebotsPreis;
-  }
+    public BigDecimal getGebotsPreis() {
+        return gebotsPreis;
+    }
 
-  public void insert() {
-    // SQL-Code zum Speichern dieses Gebots in der Datenbank
-  }
-  
-  public void update() {
-    // SQL-Code zum Aendern dieses Gebots in der Datenbank
-  }
+    public void setGebotsPreis(BigDecimal gebotsPreis) {
+        this.gebotsPreis = gebotsPreis;
+    }
 
-  public void delete() {
-    // SQL-Code zum Loeschen dieses Gebots in der Datenbank
-  }
+    public void insert() {
+        // SQL-Code zum Speichern dieses Gebots in der Datenbank
+    }
+
+    public void update() {
+        // SQL-Code zum Aendern dieses Gebots in der Datenbank
+    }
+
+    public void delete() {
+        // SQL-Code zum Loeschen dieses Gebots in der Datenbank
+    }
 }
